@@ -3,345 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mestre Aruan - Alta Magia, Amarração Amorosa e Abertura de Caminhos.">
-    <title>Mestre Aruan | Orientação Espiritual</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        /* --- CONFIGURAÇÕES GERAIS --- */
-        :root {
-            --gold: #d4af37;
-            --gold-hover: #b5952f;
-            --dark-bg: #0a0a0a;
-            --card-bg: #141414;
-            --text-light: #f0f0f0;
-            --whatsapp-green: #25d366;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- BOTÕES --- */
-        .btn-cta {
-            background-color: var(--whatsapp-green);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
-            border: 2px solid transparent;
-        }
-
-        .btn-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
-        }
-
-        .btn-cta i { margin-right: 10px; }
-
-        /* --- HERO SECTION (TOPO) --- */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 90vh; /* Ocupa quase toda a tela */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px #000;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #ddd;
-        }
-
-        /* --- IDENTIFICAÇÃO DA DOR --- */
-        .pain-section {
-            padding: 60px 0;
-            background-color: var(--card-bg);
-            text-align: center;
-        }
-
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .pain-card {
-            padding: 20px;
-            border: 1px solid #333;
-            border-radius: 8px;
-        }
-
-        .pain-card i {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        /* --- QUEM É (AUTORIDADE) --- */
-        .about-section {
-            padding: 80px 0;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .about-text { flex: 1; }
-        .about-img { 
-            flex: 1; 
-            text-align: center;
-        }
-        
-        .about-img img {
-            max-width: 100%;
-            border-radius: 10px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-
-        blockquote {
-            font-style: italic;
-            border-left: 3px solid var(--gold);
-            padding-left: 15px;
-            margin-top: 20px;
-            color: #ccc;
-        }
-
-        /* --- SERVIÇOS --- */
-        .services-section {
-            padding: 60px 0;
-            background-color: var(--card-bg);
-        }
-
-        .services-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-
-        .services-list li {
-            background: #0a0a0a;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-left: 4px solid var(--gold);
-            display: flex;
-            align-items: center;
-        }
-
-        .services-list li i {
-            color: var(--gold);
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-
-        /* --- DEPOIMENTOS --- */
-        .testimonials {
-            padding: 60px 0;
-            text-align: center;
-        }
-        
-        .testimonial-box {
-            background: #1a1a1a;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            display: inline-block;
-            max-width: 600px;
-        }
-
-        /* --- RODAPÉ --- */
-        footer {
-            background: black;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        /* --- BOTÃO FLUTUANTE WHATSAPP --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 1.8rem; }
-            .about-section { flex-direction: column; }
-            .whatsapp-float { bottom: 20px; right: 20px; }
-        }
-    </style>
+    <title>RecuperaSimples | Auditoria de Impostos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 font-sans">
+    <nav class="p-6 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto font-bold text-2xl text-blue-600">RecuperaSimples.</div>
+    </nav>
 
-    <header>
-        <div class="container hero-content">
-            <div style="margin-bottom: 20px;">
-                <i class="fas fa-eye" style="font-size: 3rem; color: var(--gold);"></i>
-            </div>
-            <h1>Cansado de promessas vazias?<br>Receba a orientação espiritual que muda destinos.</h1>
-            <p>Amor, Prosperidade e Proteção. Mestre Aruan não apenas vê o seu futuro — ele ajuda você a reescrevê-lo.</p>
-            <a href="https://wa.me/SEUNUMEROAQUI" class="btn-cta">
-                <i class="fab fa-whatsapp"></i> FALAR COM MESTRE ARUAN
-            </a>
-        </div>
-    </header>
-
-    <section class="pain-section">
-        <div class="container">
-            <h2>Sente que sua vida está travada?</h2>
-            <div class="pain-grid">
-                <div class="pain-card">
-                    <i class="fas fa-heart-broken"></i>
-                    <h3>No Amor</h3>
-                    <p>A pessoa amada se afastou, esfriou ou há rivais atrapalhando seu caminho?</p>
-                </div>
-                <div class="pain-card">
-                    <i class="fas fa-coins"></i>
-                    <h3>No Financeiro</h3>
-                    <p>Dívidas, falta de sorte e dinheiro que sai mais rápido do que entra.</p>
-                </div>
-                <div class="pain-card">
-                    <i class="fas fa-ghost"></i>
-                    <h3>Na Energia</h3>
-                    <p>Peso nos ombros, insônia, inveja e caminhos fechados sem explicação.</p>
-                </div>
-            </div>
+    <section class="max-w-4xl mx-auto mt-20 text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6">
+            Recupere impostos pagos a mais nos últimos <span class="text-blue-600">5 anos</span>.
+        </h1>
+        <p class="text-xl text-gray-600 mb-10">Farmácias, Pet Shops e Bares: Descubra seu crédito em 60 segundos com nossa auditoria automatizada.</p>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+            <h3 class="text-2xl font-bold mb-6">Iniciar Diagnóstico Gratuito</h3>
+            <form class="space-y-4">
+                <input type="text" placeholder="Seu Nome/Empresa" class="w-full p-4 border rounded-lg">
+                <input type="email" placeholder="Seu Melhor E-mail" class="w-full p-4 border rounded-lg">
+                <select class="w-full p-4 border rounded-lg">
+                    <option>Selecione o Ramo de Atividade</option>
+                    <option>Farmácia / Drogaria</option>
+                    <option>Pet Shop / Clínica Veterinária</option>
+                    <option>Bar / Restaurante</option>
+                    <option>Autopeças</option>
+                </select>
+                <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg text-xl hover:bg-blue-700 transition">
+                    VERIFICAR MEU CRÉDITO AGORA
+                </button>
+            </form>
         </div>
     </section>
-
-    <section class="about-section container">
-        <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1601053676231-c063b4691474?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mestre Aruan Búzios">
-        </div>
-        <div class="about-text">
-            <h2>Quem é Mestre Aruan?</h2>
-            <p>Com mais de 20 anos de consagração e descendência direta de guardiões espirituais, Mestre Aruan une a sabedoria ancestral com a alta magia.</p>
-            <p>Diferente de outros, ele não trabalha com "achismos". Através dos Búzios, Tarô e Vidência, ele acessa a raiz do seu problema e corta o mal pela raiz.</p>
-            <blockquote>
-                "Eu não vendo ilusões. Eu entrego caminhos abertos." <br>
-                <strong>— Mestre Aruan</strong>
-            </blockquote>
-            <br>
-            <a href="https://wa.me/SEUNUMEROAQUI" class="btn-cta">
-                <i class="fab fa-whatsapp"></i> QUERO UMA CONSULTA
-            </a>
-        </div>
-    </section>
-
-    <section class="services-section">
-        <div class="container">
-            <h2 style="text-align: center;">Trabalhos de Alta Potência</h2>
-            <ul class="services-list">
-                <li>
-                    <i class="fas fa-infinity"></i>
-                    <div>
-                        <strong>União Amorosa e Adoçamento</strong>
-                        <p>Para trazer a harmonia de volta e afastar interferências.</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="fas fa-money-bill-wave"></i>
-                    <div>
-                        <strong>Abertura de Caminhos e Sorte</strong>
-                        <p>Rituais para destravar negócios e atrair sorte em jogos e loterias.</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="fas fa-shield-alt"></i>
-                    <div>
-                        <strong>Limpeza e Blindagem</strong>
-                        <p>Remoção de cargas negativas, inveja e proteção absoluta.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <h2>Histórias Reais</h2>
-            <div class="testimonial-box">
-                <p><em>"Eu achava que não tinha mais jeito para o meu casamento. Mestre Aruan me disse coisas que só eu sabia. Em 7 dias, tudo mudou."</em></p>
-                <p style="color: var(--gold); margin-top: 10px;">— Carla M., São Paulo</p>
-            </div>
-            <br>
-            <div class="testimonial-box">
-                <p><em>"Minha empresa estava falindo. Fiz a limpeza e a abertura de caminhos. Hoje não dou conta de tanto cliente."</em></p>
-                <p style="color: var(--gold); margin-top: 10px;">— Roberto S., Bahia</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>Sigilo Absoluto Garantido. Atendimento Online para todo o Brasil.</p>
-        <p>&copy; 2025 Templo de Aruan.</p>
-    </footer>
-
-    <a href="https://wa.me/SEUNUMEROAQUI" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
 </body>
 </html>
